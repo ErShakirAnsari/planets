@@ -9,7 +9,7 @@
 
     <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>solar-system</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
 
     <modules>
         <module>earth</module>
@@ -37,7 +37,7 @@
         <connection>scm:git:https://github.com/ErShakirAnsari/planets.git</connection>
         <developerConnection>scm:git:https://github.com/ErShakirAnsari/planets.git</developerConnection>
         <url>https://github.com/ErShakirAnsari/planets/</url>
-        <tag>v1.0.0</tag>
+        <tag>Head</tag>
     </scm>
 
     <developers>
