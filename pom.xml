@@ -19,6 +19,7 @@
         <module>jupiter</module>
         <module>saturn</module>
         <module>uranus</module>
+        <module>neptune</module>
     </modules>
 
     <name>Solar System</name>
