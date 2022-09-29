@@ -11,6 +11,10 @@
     <artifactId>solar-system</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <modules>
+        <module>earth</module>
+    </modules>
+
     <name>Solar System</name>
     <url>https://github.com/ErShakirAnsari/solar-system</url>
     <description>Parent pom for all planets</description>
