@@ -23,7 +23,7 @@
     </modules>
 
     <name>Solar System</name>
-    <url>https://github.com/ErShakirAnsari/solar-system</url>
+    <url>https://github.com/ErShakirAnsari/planets</url>
     <description>Parent pom for all planets</description>
 
     <modelVersion>4.0.0</modelVersion>
@@ -34,10 +34,10 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/ErShakirAnsari/solar-system.git</connection>
-        <developerConnection>scm:git:https://github.com/ErShakirAnsari/solar-system.git</developerConnection>
-        <url>https://github.com/ErShakirAnsari/solar-system/</url>
-        <tag>v0.0.0</tag>
+        <connection>scm:git:https://github.com/ErShakirAnsari/planets.git</connection>
+        <developerConnection>scm:git:https://github.com/ErShakirAnsari/planets.git</developerConnection>
+        <url>https://github.com/ErShakirAnsari/planets/</url>
+        <tag>Head</tag>
     </scm>
 
     <developers>
