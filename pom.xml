@@ -9,7 +9,7 @@
 
     <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>solar-system</artifactId>
-    <version>0.0.0</version>
+    <version>0.0.1-SNAPSHOT</version>
 
     <name>Solar System</name>
     <url>https://github.com/ErShakirAnsari/solar-system</url>
