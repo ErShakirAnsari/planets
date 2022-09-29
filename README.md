@@ -3,7 +3,8 @@
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.ershakiransari/planets/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.ershakiransari/planets)
 [![javadoc](https://javadoc.io/badge2/com.github.ershakiransari/hello-java/javadoc.svg)](https://javadoc.io/doc/com.github.ershakiransari/hello-java)
 
-[![mvn-clean-build](https://github.com/ErShakirAnsari/planets/actions/workflows/mvn-clean-build.yml/badge.svg)](https://github.com/ErShakirAnsari/planets/actions/workflows/mvn-clean-build.yml) 
+![GitHub repo size](https://img.shields.io/github/repo-size/ershakiransari/planets?color=g&label=Repo%20Size&logo=github)
+[![mvn-clean-build](https://github.com/ErShakirAnsari/planets/actions/workflows/mvn-clean-build.yml/badge.svg)](https://github.com/ErShakirAnsari/planets/actions/workflows/mvn-clean-build.yml)
 [![Maven Central Deployment On Tag PUSH](https://github.com/ErShakirAnsari/planets/actions/workflows/publish-to-maven-central-with-tag.yml/badge.svg)](https://github.com/ErShakirAnsari/planets/actions/workflows/publish-to-maven-central-with-tag.yml)
 ---
 
@@ -11,9 +12,9 @@
 
 ```
 <parent>
-    <groupId>${project.groupId}</groupId>
+    <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>solar-system</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0</version>
 </parent>
 ```
 
@@ -21,9 +22,9 @@
 
 ```
 <dependency>
-    <groupId>${project.groupId}</groupId>
+    <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>mercury</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -31,9 +32,9 @@
 
 ```
 <dependency>
-    <groupId>${project.groupId}</groupId>
+    <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>venus</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -41,9 +42,9 @@
 
 ```
 <dependency>
-    <groupId>${project.groupId}</groupId>
+    <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>earth</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -51,9 +52,9 @@
 
 ```
 <dependency>
-    <groupId>${project.groupId}</groupId>
+    <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>mars</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -61,9 +62,9 @@
 
 ```
 <dependency>
-    <groupId>${project.groupId}</groupId>
+    <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>jupiter</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -71,9 +72,9 @@
 
 ```
 <dependency>
-    <groupId>${project.groupId}</groupId>
+    <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>saturn</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -81,9 +82,9 @@
 
 ```
 <dependency>
-    <groupId>${project.groupId}</groupId>
+    <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>uranus</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -91,8 +92,8 @@
 
 ```
 <dependency>
-    <groupId>${project.groupId}</groupId>
+    <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>neptune</artifactId>
-    <version>${project.version}</version>
+    <version>1.0.0</version>
 </dependency>
 ```
