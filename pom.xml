@@ -15,6 +15,7 @@
         <module>earth</module>
         <module>mercury</module>
         <module>venus</module>
+        <module>mars</module>
     </modules>
 
     <name>Solar System</name>
