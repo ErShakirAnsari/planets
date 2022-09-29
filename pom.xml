@@ -8,10 +8,10 @@
     </parent>
 
     <groupId>com.github.ershakiransari.planets</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>solar-system</artifactId>
     <version>0.0.0-SNAPSHOT</version>
 
-    <name>Parent</name>
+    <name>Solar System</name>
     <url>https://github.com/ErShakirAnsari/solar-system</url>
     <description>Parent pom for all planets</description>
 
