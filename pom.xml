@@ -18,6 +18,7 @@
         <module>mars</module>
         <module>jupiter</module>
         <module>saturn</module>
+        <module>uranus</module>
     </modules>
 
     <name>Solar System</name>
