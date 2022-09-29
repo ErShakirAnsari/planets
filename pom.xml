@@ -9,7 +9,7 @@
 
     <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>solar-system</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <modules>
         <module>earth</module>
