@@ -69,38 +69,106 @@ jobs:
           prerelease: false
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release ${{ github.event.inputs.version }}
-        id: attaching-hello-java
+      - name: Attaching artifacts to release earth-${{ github.event.inputs.version }}.jar
+        id: attaching-earth
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./hello-java/target/hello-java.jar
-          asset_name: hello-java-${{ github.event.inputs.version }}.jar
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./earth/target/earth.jar
+          asset_name: earth-${{ github.event.inputs.version }}.jar
           asset_content_type: application/java-archive
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release ${{ github.event.inputs.version }}
-        id: attaching-pom-xml
+      - name: Attaching artifacts to release jupiter-${{ github.event.inputs.version }}.jar
+        id: attaching-jupiter
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./pom.xml
-          asset_name: pom-${{ github.event.inputs.version }}.xml
-          asset_content_type: text/xml
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./jupiter/target/jupiter.jar
+          asset_name: jupiter-${{ github.event.inputs.version }}.jar
+          asset_content_type: application/java-archive
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release ${{ github.event.inputs.version }}
-        id: attaching-hello-maven
+      - name: Attaching artifacts to release mars-${{ github.event.inputs.version }}.jar
+        id: attaching-mars
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./hello-maven/target/hello-maven.jar
-          asset_name: hello-maven-${{ github.event.inputs.version }}.jar
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./mars/target/mars.jar
+          asset_name: mars-${{ github.event.inputs.version }}.jar
+          asset_content_type: application/java-archive
+
+      # Attaching artifact to release
+      - name: Attaching artifacts to release mercury-${{ github.event.inputs.version }}.jar
+        id: attaching-mercury
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./mercury/target/mercury.jar
+          asset_name: mercury-${{ github.event.inputs.version }}.jar
+          asset_content_type: application/java-archive
+
+      # Attaching artifact to release
+      - name: Attaching artifacts to release neptune-${{ github.event.inputs.version }}.jar
+        id: attaching-neptune
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./neptune/target/neptune.jar
+          asset_name: neptune-${{ github.event.inputs.version }}.jar
+          asset_content_type: application/java-archive
+
+      # Attaching artifact to release
+      - name: Attaching artifacts to release saturn-${{ github.event.inputs.version }}.jar
+        id: attaching-saturn
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./saturn/target/saturn.jar
+          asset_name: saturn-${{ github.event.inputs.version }}.jar
+          asset_content_type: application/java-archive
+
+      # Attaching artifact to release
+      - name: Attaching artifacts to release uranus-${{ github.event.inputs.version }}.jar
+        id: attaching-uranus
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./uranus/target/uranus.jar
+          asset_name: uranus-${{ github.event.inputs.version }}.jar
+          asset_content_type: application/java-archive
+
+      # Attaching artifact to release
+      - name: Attaching artifacts to release venus-${{ github.event.inputs.version }}.jar
+        id: attaching-venus
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./venus/target/venus.jar
+          asset_name: venus-${{ github.event.inputs.version }}.jar
           asset_content_type: application/java-archive
 
