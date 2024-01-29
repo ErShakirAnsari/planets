@@ -1,0 +1,11 @@
+<component name="CopyrightManager">
+  <settings>
+    <module2copyright>
+      <element module="All" copyright="org.ajaxer" />
+    </module2copyright>
+    <LanguageOptions name="JAVA">
+      <option name="relativeBefore" value="false" />
+      <option name="fileLocation" value="2" />
+    </LanguageOptions>
+  </settings>
+</component>
