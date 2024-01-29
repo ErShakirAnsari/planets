@@ -4,12 +4,12 @@
     <parent>
         <groupId>org.ajaxer</groupId>
         <artifactId>parent</artifactId>
-        <version>0.0.5</version>
+        <version>0.0.9</version>
     </parent>
 
     <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>solar-system</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
 
     <modules>
         <module>earth</module>
@@ -70,4 +70,17 @@
             </build>
         </profile>
     </profiles>
+
+    <distributionManagement>
+        <repository>
+            <id>${id-ossrh}</id>
+            <name>Central Repository OSSRH</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+        <snapshotRepository>
+            <id>${id-ossrh}</id>
+            <name>Central Snapshots Repository OSSRH</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
