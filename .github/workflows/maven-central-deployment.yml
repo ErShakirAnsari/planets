@@ -1,0 +1,106 @@
+name: Maven Central Deployment
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Tag Version (add prefix v)
+        required: true
+
+jobs:
+  build-publish:
+    name: Build & maven publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code checkout for ${{ github.event.inputs.version }}
+        uses: actions/checkout@v3
+
+        # DO NOT USE CONTAINER, else gpg sign step will fail
+      - name: Set up Java 1.8
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+          # Set this in pom.xml
+          server-id: ossrh-ershakiransari
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+          gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
+          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+
+      - name: Building artifact for ${{ github.event.inputs.version }}
+        run: mvn clean package --no-transfer-progress
+
+      - name: Publish ${{ github.event.inputs.version }} to the Maven Central Repository
+        run: mvn deploy -P release -Dmaven.test.skip=true --no-transfer-progress -e
+        env:
+          MAVEN_USERNAME: ${{ secrets.OSSRH_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.OSSRH_TOKEN }}
+          MAVEN_GPG_PASSPHRASE: ${{ secrets.OSSRH_GPG_SECRET_KEY_PASSWORD }}
+
+  tag-release:
+    needs: build-publish
+    name: Git tag & release
+    runs-on: ubuntu-latest
+    container: ershakiransari/jdk:8-mvn3
+    steps:
+      # Set Current Date As Env Variable
+      - name: Set current date as env variable
+        run: echo "date_today=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Code checkout for ${{ github.event.inputs.version }}
+        uses: actions/checkout@v3
+
+      - name: Building artifact for ${{ github.event.inputs.version }}
+        run: mvn clean package --no-transfer-progress
+
+      # Creating A Release
+      - name: Creating Release ${{ github.event.inputs.version }}
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          release_name: Version ${{ github.event.inputs.version }}
+          body: |
+            - Build Number: ${{ github.run_number }}
+            - Released on ${{ env.date_today }}
+          draft: false
+          prerelease: false
+
+      # Attaching artifact to release
+      - name: Attaching artifacts to release ${{ github.event.inputs.version }}
+        id: attaching-hello-java
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: ./hello-java/target/hello-java.jar
+          asset_name: hello-java-${{ github.event.inputs.version }}.jar
+          asset_content_type: application/java-archive
+
+      # Attaching artifact to release
+      - name: Attaching artifacts to release ${{ github.event.inputs.version }}
+        id: attaching-pom-xml
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: ./pom.xml
+          asset_name: pom-${{ github.event.inputs.version }}.xml
+          asset_content_type: text/xml
+
+      # Attaching artifact to release
+      - name: Attaching artifacts to release ${{ github.event.inputs.version }}
+        id: attaching-hello-maven
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
+          asset_path: ./hello-maven/target/hello-maven.jar
+          asset_name: hello-maven-${{ github.event.inputs.version }}.jar
+          asset_content_type: application/java-archive
+
