@@ -10,7 +10,7 @@
 .sts4-cache
 
 ### intelliJ idea ###
-.idea/
+#.idea/
 *.iws
 *.iml
 *.ipr
