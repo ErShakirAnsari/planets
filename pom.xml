@@ -26,7 +26,7 @@
 
     <groupId>com.github.ershakiransari.planets</groupId>
     <artifactId>solar-system</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
 
     <modules>
         <module>earth</module>
