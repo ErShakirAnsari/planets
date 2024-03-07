@@ -81,7 +81,7 @@ jobs:
           prerelease: false
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release earth-${{ env.date_today }}.jar
+      - name: Attaching artifacts to release earth-v${{ env.date_today }}.jar
         id: attaching-earth
         uses: actions/upload-release-asset@v1
         env:
@@ -90,11 +90,11 @@ jobs:
           # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./earth/target/earth.jar
-          asset_name: earth-${{ env.date_today }}.jar
+          asset_name: earth-v${{ env.date_today }}.jar
           asset_content_type: application/java-archive
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release jupiter-${{ env.date_today }}.jar
+      - name: Attaching artifacts to release jupiter-v${{ env.date_today }}.jar
         id: attaching-jupiter
         uses: actions/upload-release-asset@v1
         env:
@@ -103,11 +103,11 @@ jobs:
           # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./jupiter/target/jupiter.jar
-          asset_name: jupiter-${{ env.date_today }}.jar
+          asset_name: jupiter-v${{ env.date_today }}.jar
           asset_content_type: application/java-archive
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release mars-${{ env.date_today }}.jar
+      - name: Attaching artifacts to release mars-v${{ env.date_today }}.jar
         id: attaching-mars
         uses: actions/upload-release-asset@v1
         env:
@@ -116,11 +116,11 @@ jobs:
           # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./mars/target/mars.jar
-          asset_name: mars-${{ env.date_today }}.jar
+          asset_name: mars-v${{ env.date_today }}.jar
           asset_content_type: application/java-archive
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release mercury-${{ env.date_today }}.jar
+      - name: Attaching artifacts to release mercury-v${{ env.date_today }}.jar
         id: attaching-mercury
         uses: actions/upload-release-asset@v1
         env:
@@ -129,11 +129,11 @@ jobs:
           # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./mercury/target/mercury.jar
-          asset_name: mercury-${{ env.date_today }}.jar
+          asset_name: mercury-v${{ env.date_today }}.jar
           asset_content_type: application/java-archive
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release neptune-${{ env.date_today }}.jar
+      - name: Attaching artifacts to release neptune-v${{ env.date_today }}.jar
         id: attaching-neptune
         uses: actions/upload-release-asset@v1
         env:
@@ -142,11 +142,11 @@ jobs:
           # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./neptune/target/neptune.jar
-          asset_name: neptune-${{ env.date_today }}.jar
+          asset_name: neptune-v${{ env.date_today }}.jar
           asset_content_type: application/java-archive
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release saturn-${{ env.date_today }}.jar
+      - name: Attaching artifacts to release saturn-v${{ env.date_today }}.jar
         id: attaching-saturn
         uses: actions/upload-release-asset@v1
         env:
@@ -155,11 +155,11 @@ jobs:
           # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./saturn/target/saturn.jar
-          asset_name: saturn-${{ env.date_today }}.jar
+          asset_name: saturn-v${{ env.date_today }}.jar
           asset_content_type: application/java-archive
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release uranus-${{ env.date_today }}.jar
+      - name: Attaching artifacts to release uranus-v${{ env.date_today }}.jar
         id: attaching-uranus
         uses: actions/upload-release-asset@v1
         env:
@@ -168,11 +168,11 @@ jobs:
           # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./uranus/target/uranus.jar
-          asset_name: uranus-${{ env.date_today }}.jar
+          asset_name: uranus-v${{ env.date_today }}.jar
           asset_content_type: application/java-archive
 
       # Attaching artifact to release
-      - name: Attaching artifacts to release venus-${{ env.date_today }}.jar
+      - name: Attaching artifacts to release venus-v${{ env.date_today }}.jar
         id: attaching-venus
         uses: actions/upload-release-asset@v1
         env:
@@ -181,6 +181,6 @@ jobs:
           # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./venus/target/venus.jar
-          asset_name: venus-${{ env.date_today }}.jar
+          asset_name: venus-v${{ env.date_today }}.jar
           asset_content_type: application/java-archive
 
