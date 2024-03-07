@@ -1,6 +1,8 @@
 name: Maven Central Deployment
 
 on:
+  schedule:
+    - cron: "0 1 * * *" # every day 1am UTC/6.30am GMT+5.30
   workflow_dispatch:
     inputs:
       version:
