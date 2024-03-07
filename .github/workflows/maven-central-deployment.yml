@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: Tag Version (add prefix v)
+        description: Tag Version (WITHOUT prefix v)
         required: true
 
 jobs:
@@ -26,6 +26,9 @@ jobs:
           server-password: MAVEN_PASSWORD
           gpg-private-key: ${{ secrets.OSSRH_GPG_SECRET_KEY }}
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
+
+      - name: Versioning artifact for ${{ github.event.inputs.version }}
+        run: mvn clean versions:set -DnewVersion=${{ github.event.inputs.version }} -DgenerateBackupPoms=false
 
       - name: Building artifact for ${{ github.event.inputs.version }}
         run: mvn clean package --no-transfer-progress
@@ -50,6 +53,9 @@ jobs:
       - name: Code checkout for ${{ github.event.inputs.version }}
         uses: actions/checkout@v3
 
+      - name: Versioning artifact for ${{ github.event.inputs.version }}
+        run: mvn clean versions:set -DnewVersion=${{ github.event.inputs.version }} -DgenerateBackupPoms=false
+
       - name: Building artifact for ${{ github.event.inputs.version }}
         run: mvn clean package --no-transfer-progress
 
@@ -60,8 +66,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{ github.event.inputs.version }}
-          release_name: Version ${{ github.event.inputs.version }}
+          tag_name: v${{ github.event.inputs.version }}
+          release_name: Version v${{ github.event.inputs.version }}
           body: |
             - Build Number: ${{ github.run_number }}
             - Released on ${{ env.date_today }}
