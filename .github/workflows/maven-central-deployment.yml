@@ -26,6 +26,7 @@ jobs:
             echo "FINAL_VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
           else
             echo "FINAL_VERSION=${{ env.DEFAULT_VERSION }}" >> $GITHUB_ENV
+          fi
 
       - name: Printing versions
         run: |
