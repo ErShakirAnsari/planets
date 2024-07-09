@@ -21,7 +21,8 @@ jobs:
       - name: Determine input version or default
         id: determine-input
         run: |
-          if [ -n "${{ github.event.inputs.version }}" ]; then
+          custom_input="${{ github.event.inputs.version }}"
+          if [ -n "$custom_input" ]; then
             echo "FINAL_VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
           else
             echo "FINAL_VERSION=${{ env.DEFAULT_VERSION }}" >> $GITHUB_ENV
