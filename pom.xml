@@ -48,6 +48,7 @@
 
     <properties>
         <id-ossrh>ossrh-ershakiransari</id-ossrh>
+        <java.version>17</java.version>
     </properties>
 
     <build>

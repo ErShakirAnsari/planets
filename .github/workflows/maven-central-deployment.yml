@@ -19,13 +19,14 @@ jobs:
         run: echo "date_today=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
 
       - name: Code checkout for ${{ env.date_today }}
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4.1.7
 
         # DO NOT USE CONTAINER, else gpg sign step will fail
-      - name: Set up Java 1.8
-        uses: actions/setup-java@v1
+      - name: Setup Java JDK 17
+        uses: actions/setup-java@v4.2.1
         with:
-          java-version: 1.8
+          java-version: '17'
+          distribution: 'corretto'
           # Set this in pom.xml
           server-id: ossrh-ershakiransari
           server-username: MAVEN_USERNAME
@@ -50,7 +51,7 @@ jobs:
     needs: build-publish
     name: Git tag & release
     runs-on: ubuntu-latest
-    container: ershakiransari/jdk:8-mvn3
+    container: ershakiransari/jdk:17-mvn3
     steps:
       # Set Current Date As Env Variable
       - name: Set current date as env variable
