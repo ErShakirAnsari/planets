@@ -67,10 +67,25 @@ jobs:
     name: Git tag & release
     runs-on: ubuntu-latest
     container: ershakiransari/jdk:17-mvn3
+
     steps:
-      # Set Current Date As Env Variable
-      - name: Set current date as env variable
-        run: echo "date_today=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+      - name: Set up Default Version
+        run: echo "DEFAULT_VERSION=$(date +'%Y.%m.%d')" >> $GITHUB_ENV
+
+      - name: Determine input version or default
+        id: determine-input
+        run: |
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            echo "FINAL_VERSION=${{ github.event.inputs.version }}" >> $GITHUB_ENV
+          else
+            echo "FINAL_VERSION=${{ env.DEFAULT_VERSION }}" >> $GITHUB_ENV
+          fi
+
+      - name: Printing versions
+        run: |
+          echo "DEFAULT_VERSION: ${{ env.DEFAULT_VERSION }}"         
+          echo "INPUT_VERSION: ${{ github.event.inputs.version }}"         
+          echo "FINAL_VERSION: ${{ env.FINAL_VERSION }}"         
 
       - name: Code checkout for ${{ env.FINAL_VERSION }}
         uses: actions/checkout@v3
